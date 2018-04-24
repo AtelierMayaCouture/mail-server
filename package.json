@@ -1,0 +1,30 @@
+{
+  "name": "amc-back",
+  "version": "1.0.0",
+  "description": "ateliermayacouture.com backend",
+  "main": "server.js",
+  "scripts": {
+    "prod": "NODE_ENV=production node server.js",
+    "start": "pm2-docker start --auto-exit --json --env $NODE_ENV $PM2_CONFIG",
+    "start:dev": "pm2-dev start --raw --env $NODE_ENV $PM2_CONFIG",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkselsLedins/atelier-maya-couture"
+  },
+  "author": "Aksels Ledins <aksels.ledins@gmail.com> (http://aksels.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AkselsLedins/atelier-maya-couture/issues"
+  },
+  "homepage": "https://github.com/AkselsLedins/atelier-maya-couture#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "compression": "^1.6.2",
+    "express": "^4.14.1",
+    "express-validator": "^3.1.2",
+    "https": "^1.0.0",
+    "nodemailer": "^3.0.2"
+  }
+}

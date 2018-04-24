@@ -1,1 +1,1 @@
-# mail-server
+## Mail Server for AMC
