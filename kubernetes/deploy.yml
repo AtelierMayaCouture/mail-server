@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: amc-back
+  labels:
+    app: amc-back
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amc-back
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: amc-back
+    spec:
+      containers:
+      - image: gcr.io/k8s-aksels/github-ateliermayacouture-mail-server:v1.0
+        name: amc-back
+        resources:
+          requests:
+            cpu: 20m
+            memory: 55M
+        env:
+        - name: EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: amc-secret
+              key: EMAIL
+        - name: EMAIL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: amc-secret
+              key: EMAIL_PASSWORD
+        - name: RECAPTCHA_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: amc-secret
+              key: RECAPTCHA_SECRET

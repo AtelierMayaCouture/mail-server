@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: amc-back-svc
+spec:
+  selector:
+    app: amc-back
+  type: NodePort
+  ports:
+  - name: amc-back-svc
+    port: 8080
+    targetPort: 8080
