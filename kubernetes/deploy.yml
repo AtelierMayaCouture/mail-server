@@ -21,7 +21,7 @@ spec:
         app: amc-back
     spec:
       containers:
-      - image: gcr.io/k8s-aksels/github-ateliermayacouture-mail-server:v1.0
+      - image: gcr.io/k8s-aksels/github-ateliermayacouture-mail-server:v1.1
         name: amc-back
         resources:
           requests:
