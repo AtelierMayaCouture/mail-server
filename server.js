@@ -3,6 +3,7 @@ var express     = require('express')
 var bodyParser  = require('body-parser')
 var expValid    = require('express-validator')
 var path        = require('path')
+var cors        = require('cors')
 var compression = require('compression')
 var nodemailer  = require('nodemailer')
 var util        = require('util')
@@ -13,6 +14,7 @@ var sen         = require('./strings/en.js')
 var app = express()
 
 app.use(compression());
+app.use(cors())
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
